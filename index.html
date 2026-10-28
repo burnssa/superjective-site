@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Superjective</title>
+<meta name="description" content="Superjective ran blind comparisons of frontier AI models from 2024 to 2026. The benchmark, research and production system that came out of it, and where the work continues.">
+<link rel="canonical" href="https://superjective.ai/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Superjective">
+<meta property="og:url" content="https://superjective.ai/">
+<meta property="og:title" content="Superjective">
+<meta property="og:description" content="Blind comparisons of frontier AI models, 2024–2026. The benchmark, research and production system that came out of it.">
+<meta property="og:image" content="https://superjective.ai/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Superjective: blind comparisons of frontier AI models, 2024–2026.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Superjective">
+<meta name="twitter:description" content="Blind comparisons of frontier AI models, 2024–2026. The benchmark, research and production system that came out of it.">
+<meta name="twitter:image" content="https://superjective.ai/assets/og-card.png">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 344 189" aria-hidden="true" focusable="false"><rect width="168" height="189" rx="38" fill="#5C6BC0"/><rect x="94" y="64" width="120" height="160" rx="32" fill="#fff"/><rect x="157" width="187" height="189" rx="38" fill="#4285F4"/></svg>
+      Superjective
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Which model output should you trust?</h1>
+        <p class="lede">Superjective was built to find out by asking people. From 2024 to 2026 it ran blind, side-by-side comparisons of frontier models: one prompt, several answers, the model names hidden until you had chosen. The preferences were kept as data. The product closed in October 2026, and what came out of it is below.</p>
+        <div class="now">
+          <p>The question didn't close with it. I'm now co-founder and COO of <a href="https://clearwood.ai">Clearwood</a>, which measures how deployed AI systems actually behave, independently of the vendors that built them.</p>
+          <span class="sig">Scott Burns</span>
+        </div>
+      </div>
+      <figure class="shot">
+        <picture>
+          <source srcset="/assets/comparison-interface.webp" type="image/webp">
+          <img src="/assets/comparison-interface.png" width="1200" height="612" alt="The Superjective comparison screen: a prompt at the top, three anonymized responses labelled A, B and C side by side, each with a Select as Best button, and the chosen response expanded below." loading="eager">
+        </picture>
+        <figcaption>A comparison in progress. Three models answer the same prompt; the names are revealed after a choice is made.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>What came out of it</h2>
+      <p class="intro">Two artifacts worth a close look: a benchmark that still runs, and the product itself, closed and documented.</p>
+      <div class="work">
+        <div class="block">
+          <h3>AMLBench</h3>
+          <p class="meta">Public benchmark, v0.2 (July 2026), Apache-2.0</p>
+          <p>Do AI agents clear money-laundering alerts the law requires them to escalate? AMLBench builds synthetic alerts with IBM's AMLSim and scores each escalation decision against deterministic Bank Secrecy Act rules, never an LLM judge, under adversarial prompts, operational pressure and deceptive cover stories drawn from real enforcement cases.</p>
+          <p>Deceptive cover stories lowered every model's sensitivity by 27 to 73 points, including the two models robust to everything else, and standard observability tooling raised no flags while it happened.</p>
+          <p class="links">
+            <a href="https://amlbench.com">amlbench.com</a>
+            <a href="https://github.com/burnssa/amlbench">Code</a>
+            <a href="https://github.com/burnssa/amlbench/blob/master/docs/AMLBENCH_FINDINGS.md">Findings</a>
+          </p>
+        </div>
+        <div class="block blue">
+          <h3>Superjective</h3>
+          <p class="meta">Production system, 2024 to October 2026</p>
+          <p>A React and FastAPI application in which people compared anonymized responses from Anthropic, OpenAI, Google, xAI and open-weight models, with a Thompson-sampling router that learned which models to show each person. Around it: a Chrome extension that drafted replies in any text field, with personal information stripped in the browser before anything was sent, and a phone line for comparisons by voice.</p>
+          <p>The preferences people recorded were benchmarked against Anthropic's HH-RLHF dataset.</p>
+          <p class="links">
+            <a href="https://github.com/burnssa/superjective-extension">Chrome extension</a>
+            <a href="https://github.com/burnssa/ai-alignment-research/tree/master/naturalistic-dpo-experiment">Preference data vs HH-RLHF</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <h2>Research along the way</h2>
+      <p class="intro">The same question from the inside: whether a model's trustworthiness can be read off its internals before it shows up in its answers. Independent work, published on LessWrong.</p>
+      <ul class="posts">
+        <li>
+          <a class="title" href="https://www.lesswrong.com/posts/Bh4pBdAQfgoJ7CFoP/2b-scoring-model-flags-out-of-domain-misalignment-suggesting">2B scoring model flags out-of-domain misalignment, suggesting specialist judges have potential for audits</a>
+          <p class="where">May 2026</p>
+          <p class="what">A Gemma-2-2B judge fine-tuned on insecure-code examples separated misaligned from secure-tuned Gemma-3-12B responses on out-of-domain safety prompts (Cohen's d = 0.29, p = 0.016). Tentative support for narrow, lightweight scorers as a primitive in model audits.</p>
+        </li>
+        <li>
+          <a class="title" href="https://www.lesswrong.com/posts/cN3n2HDNkf4Bterxx/emergent-misalignment-evident-in-activations-at-low">Emergent misalignment evident in activations at low poisoning doses, long before behavioral checks flag it</a>
+          <p class="where">April 2026</p>
+          <p class="what">Fine-tuning Llama 3.2-3B on mixes of misaligned data, activation drift reaches about 28% of its full-poisoning magnitude at a 5% dose, while behavioral evaluations show no signal until 50% or more.</p>
+        </li>
+        <li>
+          <a class="title" href="https://www.lesswrong.com/posts/52eFBikdqDMXT2tph/how-post-training-shapes-legal-representations-probing">How post-training shapes legal representations: probing SCOTUS opinions across model families</a>
+          <p class="where">March 2026</p>
+          <p class="what">Post-trained open models linearly represent key legal concepts from landmark Supreme Court opinions in the residual stream; base models mostly don't. Post-training appears to create geometric structure that pretraining alone leaves absent.</p>
+        </li>
+      </ul>
+      <p class="also">Also open source: <a href="https://github.com/burnssa/newscheck">newscheck</a>, claim extraction for news and opinion pieces, the first stage of a multi-model fact-checking pipeline that ran inside Superjective.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>If something here is useful to you, write to <a href="mailto:scott@superjective.ai">scott@superjective.ai</a>, or find me on <a href="https://www.linkedin.com/in/burnssa">LinkedIn</a> and <a href="https://github.com/burnssa">GitHub</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Superjective LLC</span>
+    <nav aria-label="Legal">
+      <a href="/terms/">Terms</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/sms-policy/">SMS policy</a>
+    </nav>
+    <span>This page sets no cookies and runs no analytics.</span>
+  </div>
+</footer>
+
+</body>
+</html>
