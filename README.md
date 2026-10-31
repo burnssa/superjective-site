@@ -1,8 +1,8 @@
 # superjective.ai
 
-The site at [superjective.ai](https://superjective.ai): a record of what Superjective built between 2024 and 2026, after the product closed in October 2026.
+[superjective.ai](https://superjective.ai) is a record of what I built in Superjective, documenting the project after the application was shut down in October 2026.
 
-Plain HTML and CSS, no build step, no JavaScript, no analytics. Every push to `main` deploys to GitHub Pages through `.github/workflows/pages.yml`.
+It's plain HTML and CSS with no build step, no JavaScript, no analytics. 
 
 ```
 index.html            front page
@@ -13,4 +13,3 @@ assets/               stylesheet, logo files, Open Graph card, favicons
 CNAME                 custom domain for Pages
 ```
 
-To change the site, edit the HTML and push. There is nothing to install.
