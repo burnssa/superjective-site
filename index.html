@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Superjective</title>
-<meta name="description" content="Superjective ran blind comparisons of frontier AI models from 2024 to 2026. The benchmark, research and production system that came out of it, and where the work continues.">
+<meta name="description" content="Superjective ran blind comparisons of frontier AI models in 2025 and 2026. The benchmark, research and production system that came out of it, and where the work continues.">
 <link rel="canonical" href="https://superjective.ai/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Superjective">
 <meta property="og:url" content="https://superjective.ai/">
 <meta property="og:title" content="Superjective">
-<meta property="og:description" content="Blind comparisons of frontier AI models, 2024–2026. The benchmark, research and production system that came out of it.">
+<meta property="og:description" content="Blind comparisons of frontier AI models, 2025–2026. The benchmark, research and production system that came out of it.">
 <meta property="og:image" content="https://superjective.ai/assets/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Superjective: blind comparisons of frontier AI models, 2024–2026.">
+<meta property="og:image:alt" content="Superjective: blind comparisons of frontier AI models, 2025–2026.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Superjective">
-<meta name="twitter:description" content="Blind comparisons of frontier AI models, 2024–2026. The benchmark, research and production system that came out of it.">
+<meta name="twitter:description" content="Blind comparisons of frontier AI models, 2025–2026. The benchmark, research and production system that came out of it.">
 <meta name="twitter:image" content="https://superjective.ai/assets/og-card.png">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -50,27 +50,30 @@
   <div class="hero">
     <div class="wrap">
       <div>
-        <h1>Which model output should you trust?</h1>
-        <p class="lede">Superjective was built to find out by asking people. From 2024 to 2026 it ran blind, side-by-side comparisons of frontier models: one prompt, several answers, the model names hidden until you had chosen. The preferences were kept as data. The product closed in October 2026, and what came out of it is below.</p>
-        <div class="now">
-          <p>The question didn't close with it. I'm now co-founder and COO of <a href="https://clearwood.ai">Clearwood</a>, which measures how deployed AI systems actually behave, independently of the vendors that built them.</p>
-          <span class="sig">Scott Burns</span>
-        </div>
+        <h1>Do you trust your model's output?</h1>
+        <p class="lede">Superjective was built to find out by gathering authentic user preferences. In 2025 and 2026 it ran blind, side-by-side comparisons of frontier models: one prompt, several answers, the model names hidden until the user had chosen. The preferences affected model sampling for the user and were kept for analysis. The product shut down in October 2026. Some insights from its run are featured below.</p>
       </div>
-      <figure class="shot">
+      <figure class="stack">
         <picture>
-          <source srcset="/assets/comparison-interface.webp" type="image/webp">
-          <img src="/assets/comparison-interface.png" width="1200" height="612" alt="The Superjective comparison screen: a prompt at the top, three anonymized responses labelled A, B and C side by side, each with a Select as Best button, and the chosen response expanded below." loading="eager">
+          <source srcset="/assets/hero-1-prompt.webp" type="image/webp">
+          <img src="/assets/hero-1-prompt.png" width="1200" height="362" alt="Step one: a question typed into Superjective. My doctor recommended knee replacement surgery. What questions should I ask before making this decision? A blue Generate Responses button sits below." loading="eager">
         </picture>
-        <figcaption>A comparison in progress. Three models answer the same prompt; the names are revealed after a choice is made.</figcaption>
+        <picture>
+          <source srcset="/assets/hero-2-compare.webp" type="image/webp">
+          <img src="/assets/hero-2-compare.png" width="1200" height="480" alt="Step two: three anonymous answers labelled Response A, B and C side by side, each with a Select as Best button. Response B is open below." loading="eager">
+        </picture>
+        <picture>
+          <source srcset="/assets/hero-3-reveal.webp" type="image/webp">
+          <img src="/assets/hero-3-reveal.png" width="1200" height="583" alt="Step three: the same three answers with the model names revealed, gpt-4.1-mini, claude-sonnet-4 and gemini-2.0-flash. The middle answer is marked Best Response in green." loading="eager">
+        </picture>
       </figure>
     </div>
   </div>
 
   <section id="work">
     <div class="wrap">
-      <h2>What came out of it</h2>
-      <p class="intro">Two artifacts worth a close look: a benchmark that still runs, and the product itself, closed and documented.</p>
+      <h2>Projects and findings</h2>
+      <p class="intro">A benchmark for model performance in a high-stakes workflow, and the Superjective app with preference data analysis.</p>
       <div class="work">
         <div class="block">
           <h3>AMLBench</h3>
@@ -85,7 +88,7 @@
         </div>
         <div class="block blue">
           <h3>Superjective</h3>
-          <p class="meta">Production system, 2024 to October 2026</p>
+          <p class="meta">Production system, 2025 to October 2026</p>
           <p>A React and FastAPI application in which people compared anonymized responses from Anthropic, OpenAI, Google, xAI and open-weight models, with a Thompson-sampling router that learned which models to show each person. Around it: a Chrome extension that drafted replies in any text field, with personal information stripped in the browser before anything was sent, and a phone line for comparisons by voice.</p>
           <p>The preferences people recorded were benchmarked against Anthropic's HH-RLHF dataset.</p>
           <p class="links">
@@ -93,6 +96,9 @@
             <a href="https://github.com/burnssa/ai-alignment-research/tree/master/naturalistic-dpo-experiment">Preference data vs HH-RLHF</a>
           </p>
         </div>
+      </div>
+      <div class="now">
+        <p>I'm still exploring the same question. Now as co-founder and COO of <a href="https://clearwood.ai">Clearwood</a>, which measures how deployed AI systems actually behave, independently of the vendors that built them.</p>
       </div>
     </div>
   </section>

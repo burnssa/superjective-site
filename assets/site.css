@@ -45,21 +45,29 @@ img, svg { max-width: 100%; height: auto; }
 .site-nav a:hover { color: var(--blue); }
 
 /* hero */
-.hero { padding: 64px 0 40px; }
+.hero { padding: 64px 0 16px; }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 48px; align-items: start; }
 .hero h1 { font-size: 44px; max-width: 13em; margin-bottom: 24px; }
 .hero .lede { font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: var(--prose); }
-.now { margin-top: 32px; padding: 16px 0 16px 22px; border-left: 4px solid var(--blue); max-width: var(--prose); color: var(--ink); }
-.now .sig { display: block; margin-top: 6px; color: var(--muted); font-size: 15px; }
 .shot { margin: 8px 0 0; }
 .shot img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-2); }
 .shot figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); line-height: 1.45; }
 
+/* hero image stack: three steps cascading down and to the right */
+.stack { margin: 8px 0 0; }
+.stack picture { display: block; position: relative; width: 80%; }
+.stack picture + picture { margin-top: -7%; }
+.stack picture:nth-child(2) { margin-left: 10%; z-index: 2; }
+.stack picture:nth-child(3) { margin-left: 20%; z-index: 3; }
+.stack img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 10px; background: #fff; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14), 0 2px 6px rgba(15, 23, 42, 0.08); }
+
 /* sections */
 section { padding: 56px 0; }
 section + section { border-top: 1px solid var(--line); }
+.hero + section { padding-top: 24px; }
 h2 { font-size: 28px; margin-bottom: 10px; }
 .intro { color: var(--ink-2); max-width: var(--prose); margin-bottom: 36px; }
+#work .intro { max-width: none; }
 
 /* the two project blocks: the logo's two squares */
 .work { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
@@ -69,6 +77,10 @@ h2 { font-size: 28px; margin-bottom: 10px; }
 .block .meta { font-size: 15px; color: var(--muted); margin-bottom: 16px; }
 .block p + p { margin-top: 12px; }
 .block .links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; }
+
+/* where the work continues: full width under the two blocks */
+.now { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink); }
+.now .sig { display: block; margin-top: 6px; color: var(--muted); font-size: 15px; }
 
 /* research list */
 .posts { list-style: none; margin: 0; padding: 0; max-width: 760px; }
@@ -121,6 +133,7 @@ h2 { font-size: 28px; margin-bottom: 10px; }
   h2 { font-size: 24px; }
   .work { grid-template-columns: 1fr; gap: 32px; }
   .block h3 { font-size: 22px; }
+  .now { margin-top: 32px; }
   .legal h1 { font-size: 28px; }
 }
 
